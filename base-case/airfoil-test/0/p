@@ -6,7 +6,7 @@
      \\/     M anipulation  |
 \*---------------------------------------------------------------------------*/
 FoamFile
-{
+
     version     2.0;
     format      ascii;
     class       volScalarField;
@@ -20,33 +20,37 @@ internalField   uniform 0;
 
 boundaryField
 {
-    inlet
+    b7*
+    {
+        type            freestreamPressure;
+    }
+
+    b4*
+    {
+        type            freestreamPressure;
+    }
+
+    b5*
+    {
+        type            freestreamPressure;
+	}
+
+    b8*
     {
         type            zeroGradient;
     }
 
-    outlet
-    {
-        type            fixedValue;
-        value           uniform 0;
-    }
-
-    symBoundTop
-    {
-        type            symmetryPlane;
-    }
-
-    symBoundBottom
-    {
-        type            symmetryPlane;
-    }
-
-    flatPlate
+    b6*
     {
         type            zeroGradient;
     }
 
-    frontAndBack
+    b2*
+    {
+        type            empty;
+    }
+
+    b3*
     {
         type            empty;
     }

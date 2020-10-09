@@ -6,54 +6,58 @@
      \\/     M anipulation  |
 \*---------------------------------------------------------------------------*/
 FoamFile
-{
+
     version     2.0;
     format      ascii;
     class       volScalarField;
-    location    "0";
     object      nut;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 dimensions      [0 2 -1 0 0 0 0];
 
-internalField   uniform 1.33e-4;
+internalField   uniform 1e-05;
 
 boundaryField
 {
-    inlet
+    b7*
     {
-        type            calculated;
-        value           uniform 1.3e-4;
+        type            freestream;
+		freestreamValue	&internalField;
     }
 
-    outlet
+    b4*
     {
-        type            calculated;
-	value		uniform 1.3e-4;
+        type            freestream;
+		freestreamValue	&internalField;
     }
 
-    symBoundTop
+    b5*
     {
-        type            symmetryPlane;
+        type            freestream;
+		freestreamValue	&internalField;
+	}
+
+    b8*
+    {
+        type            zeroGradient;
     }
 
-    symBoundBottom
+    b6*
     {
-        type            symmetryPlane;
+        type            fixedValue;
+		value			uniform 0;
     }
 
-    flatPlate
+    b2*
     {
-	type		fixedValue;
-	value		uniform 0;
+        type            empty;
     }
 
-    frontAndBack
+    b3*
     {
         type            empty;
     }
 }
-
 
 // ************************************************************************* //
