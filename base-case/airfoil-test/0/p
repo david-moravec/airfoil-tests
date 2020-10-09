@@ -20,37 +20,37 @@ internalField   uniform 0;
 
 boundaryField
 {
-    b7*
+    b7-farfield_reim
     {
         type            freestreamPressure;
     }
 
-    b4*
+    b4-farfield_reim
     {
         type            freestreamPressure;
     }
 
-    b5*
+    b5-farfield_reim
     {
         type            freestreamPressure;
 	}
 
-    b8*
+    b8-to-stitch-a
     {
         type            zeroGradient;
     }
 
-    b6*
+    b6-viscous_solid
     {
         type            zeroGradient;
     }
 
-    b2*
+    b2-symmetry_y_strong
     {
         type            empty;
     }
 
-    b3*
+    b3-symmetry_y_strong
     {
         type            empty;
     }

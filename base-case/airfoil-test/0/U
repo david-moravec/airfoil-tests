@@ -20,40 +20,40 @@ internalField   uniform (30.0 0 0);
 
 boundaryField
 {
-    b7*
+    b7-farfield_reim
     {
         type            freestream;
 		freestreamValue	&internalField;
     }
 
-    b4*
+    b4-farfield_reim
     {
         type            freestream;
 		freestreamValue	&internalField;
     }
 
-    b5*
+    b5-farfield_reim
     {
         type            freestream;
 		freestreamValue	&internalField;
 	}
 
-    b8*
+    b8-to-stitch-a
     {
         type            slip;
     }
 
-    b6*
+    b6-viscous_solid
     {
         type            noSlip;
     }
 
-    b2*
+    b2-symmetry_y_strong
     {
         type            empty;
     }
 
-    b3*
+    b3-symmetry_y_strong
     {
         type            empty;
     }
