@@ -20,23 +20,28 @@ internalField   uniform 1e-05;
 
 boundaryField
 {
-    b7-farfield_reim
+    b7-farfield_riem
     {
         type            freestream;
-		freestreamValue	&internalField;
+		freestreamValue	$internalField;
     }
 
-    b4-farfield_reim
+    b4-farfield_riem
     {
         type            freestream;
-		freestreamValue	&internalField;
+		freestreamValue	$internalField;
     }
 
-    b5-farfield_reim
+    b5-farfield_riem
     {
         type            freestream;
-		freestreamValue	&internalField;
+		freestreamValue	$internalField;
 	}
+
+	defaultFaces
+    {
+        type            zeroGradient;
+    }
 
     b8-to-stitch-a
     {
@@ -51,12 +56,12 @@ boundaryField
 
     b2-symmetry_y_strong
     {
-        type            empty;
+        type            symmetryPlane;
     }
 
     b3-symmetry_y_strong
     {
-        type            empty;
+        type            symmetryPlane;
     }
 }
 
