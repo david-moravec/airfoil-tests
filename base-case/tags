@@ -1,0 +1,21 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+angle	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^    angle = float(sys.argv[5])$/;"	v	language:Python
+argCount	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^argCount = len(sys.argv)$/;"	v	language:Python
+chordLength	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^    chordLength = float(sys.argv[4])$/;"	v	language:Python
+CNACA	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^class CNACA(object):$/;"	c	language:Python
+CTriangle	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^class CTriangle(object):$/;"	c	language:Python
+CVertex	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^class CVertex(object):$/;"	c	language:Python
+foil	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^    foil = str(sys.argv[1])$/;"	v	language:Python
+length	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^    length = float(sys.argv[3])$/;"	v	language:Python
+NACA	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^    NACA = CNACA("2412", 100, 0.2, 1, 0)$/;"	v	language:Python
+NACA	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^    NACA = CNACA(foil, nPts, length, chordLength, angle)$/;"	v	language:Python
+nPts	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^    nPts = int(sys.argv[2])$/;"	v	language:Python
+PrintToFile	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^def PrintToFile(triangles, naca):$/;"	f	language:Python
+transRot	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^    def transRot(self):$/;"	m	language:Python	class:CNACA
+transSize	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^    def transSize(self):$/;"	m	language:Python	class:CNACA
+triangleGenerator	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^def triangleGenerator(VerFs, VerBs):$/;"	f	language:Python
+UpdateVectors	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^    def UpdateVectors(self):$/;"	m	language:Python	class:CTriangle
+updateVertices	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^    def updateVertices(self):$/;"	m	language:Python	class:CNACA
+__init__	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^    def __init__(self, foil, nPts, length, chordLength, angle):$/;"	m	language:Python	class:CNACA
+__init__	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^    def __init__(self, vertices):$/;"	m	language:Python	class:CTriangle
+__init__	/home/david/OpenFOAM/david-7/run/airfoil-tests/base-case/myNaca.py	/^    def __init__(self, x, y, z):$/;"	m	language:Python	class:CVertex
