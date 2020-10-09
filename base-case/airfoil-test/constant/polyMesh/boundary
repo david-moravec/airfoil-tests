@@ -19,15 +19,15 @@ FoamFile
 (
     b2-symmetry_y_strong
     {
-        type            patch;
-        physicalType    patch;
+        type            symmetryPlane;
+        physicalType    symmetryPlane;
         nFaces          14336;
         startFace       28384;
     }
     b3-symmetry_y_strong
     {
-        type            patch;
-        physicalType    patch;
+        type            symmetryPlane;
+        physicalType    symmetryPlane;
         nFaces          14336;
         startFace       42720;
     }
