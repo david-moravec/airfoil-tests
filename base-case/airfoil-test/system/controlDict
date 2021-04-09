@@ -15,8 +15,8 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 libs (
-    "myIncompressibleTurbulenceModels.so"
-    "myCompressibleTurbulenceModels.so"
+    "WrayAgarwalTransitionDebug.so"
+    "WrayAgarvalDebug.so"
 );
 
 application     simpleFoam;
@@ -49,11 +49,5 @@ timePrecision   6;
 
 runTimeModifiable true;
 
-functions
-{
-	#includeFunc wallShearStress
-	#includeFunc mag(U)
-	#includeFunc mag(wallShearStress)
-}
 
 // ************************************************************************* //

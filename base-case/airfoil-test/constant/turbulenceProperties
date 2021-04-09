@@ -19,7 +19,11 @@ simulationType RAS;
 
 RAS
 {
-    RASModel        SpalartAllmaras;
+    RASModel        WrayAgarwalTransition;
+    //RASModel        SpalartAllmaras;
+    //RASModel        WrayAgarvalDebug;
+
+    
 
     turbulence      on;
 

@@ -17,56 +17,56 @@ FoamFile
 
 8
 (
-    b2-symmetry_y_strong
+    front
     {
-        type            symmetryPlane;
-        physicalType    symmetryPlane;
+        type            empty;
+        physicalType    patch;
         nFaces          14336;
         startFace       28384;
     }
-    b3-symmetry_y_strong
+    back
     {
-        type            symmetryPlane;
-        physicalType    symmetryPlane;
+        type            empty;
+        physicalType    patch;
         nFaces          14336;
         startFace       42720;
     }
-    b4-farfield_riem
+    outlet_up
     {
         type            patch;
         physicalType    patch;
         nFaces          64;
         startFace       57056;
     }
-    b5-farfield_riem
+    outlet_down
     {
         type            patch;
         physicalType    patch;
         nFaces          64;
         startFace       57120;
     }
-    b6-viscous_solid
+    airfoil
     {
-        type            patch;
+        type            wall;
         physicalType    patch;
         nFaces          128;
         startFace       57184;
     }
-    b7-farfield_riem
+    inlet
     {
         type            patch;
         physicalType    patch;
         nFaces          224;
         startFace       57312;
     }
-    b8-to-stitch-a
+    temp1
     {
         type            patch;
         physicalType    patch;
         nFaces          48;
         startFace       57536;
     }
-    defaultFaces
+    temp2
     {
         type            patch;
         nFaces          48;

@@ -6,62 +6,57 @@
      \\/     M anipulation  |
 \*---------------------------------------------------------------------------*/
 FoamFile
-
+{
     version     2.0;
     format      ascii;
     class       volVectorField;
+    location    "0";
     object      U;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 dimensions      [0 1 -1 0 0 0 0];
 
-internalField   uniform (30.0 0 0);
+internalField   uniform (25.75 3.62 0);
 
 boundaryField
 {
-    b7-farfield_riem
+    front
     {
-        type            freestream;
-		freestreamValue	$internalField;
+        type            empty;
     }
-
-    b4-farfield_riem
+    back
     {
-        type            freestream;
-		freestreamValue	$internalField;
+        type            empty;
     }
-
-    b5-farfield_riem
+    outlet_up
     {
-        type            freestream;
-		freestreamValue	$internalField;
-	}
-
-    defaultFaces
-    {
-        type            slip;
+        type            freestreamVelocity;
+        freestreamValue $internalField;
     }
-
-    b8-to-stitch-a
+    outlet_down
     {
-        type            slip;
+        type            freestreamVelocity;
+        freestreamValue $internalField;
     }
-
-    b6-viscous_solid
+    airfoil
     {
         type            noSlip;
     }
-
-    b2-symmetry_y_strong
+    inlet
     {
-        type            symmetryPlane;
+        type            freestreamVelocity;
+        freestreamValue $internalField;
     }
-
-    b3-symmetry_y_strong
-    {
-        type            symmetryPlane;
-    }
+    temp1
+	{	
+		type			zeroGradient;
+	}
+    temp2
+	{	
+		type			zeroGradient;
+	}
 }
+
 
 // ************************************************************************* //
