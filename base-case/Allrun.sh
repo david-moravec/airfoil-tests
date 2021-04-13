@@ -15,14 +15,18 @@ while pgrep -x "simpleFoam" > /dev/null; do
     :
 done
 kill $GNUPLOT_PID
+simpleFoam -postProcess -func wallShearStress
+postProcess -func surfaces
 
 
-../scripts/compute-Cf-Rex.sh > Cf-x.dat
+../scripts/compute-Cf-x.sh > Cf-x.dat
+../scripts/compute-Cp-x.sh > Cp-x.dat
 
 cd ../scripts
 
 gnuplot -e "turbModel='${turbModel}'" saveResiduals.gp 
 gnuplot -e "turbModel='${turbModel}'" Cf-x.gp 
+gnuplot -e "turbModel='${turbModel}'" Cp-x.gp 
 
 cd ../airfoil-test
 
@@ -38,6 +42,6 @@ cp "./Cf-x.dat" "${resultFold}/data.dat"
 cp "./residuals.png" "${resultFold}/../residuals.png"
 
 cd ../
-done
+killall gnuplot
 
 echo "DONE!!!"

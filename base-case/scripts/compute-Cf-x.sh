@@ -3,8 +3,8 @@
 
 rho=1.2
 nu=0.000015
-Ux=25.75
-Uy=3.62
+Ux=51.4815
+Uy=0
 U=$(echo "sqrt(${Ux}^2 + ${Uy}^2)" | bc -l |  awk '{printf("%.8f", $1);}')
 
 fold="../airfoil-test/postProcessing/surfaces/1/wallShearStress_wall.raw"

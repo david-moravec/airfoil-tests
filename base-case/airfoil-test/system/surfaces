@@ -13,7 +13,7 @@ surfaces
     writeControl    writeTime;
 
     surfaceFormat   raw;
-    fields          (wallShearStress);
+    fields          (wallShearStress p);
 
     interpolationScheme cell;
 

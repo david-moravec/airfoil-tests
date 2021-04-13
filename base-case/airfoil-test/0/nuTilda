@@ -11,13 +11,13 @@ FoamFile
     format      ascii;
     class       volScalarField;
     location    "0";
-    object      nuTilda;
+    object      gamma;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 dimensions      [0 2 -1 0 0 0 0];
 
-internalField   uniform 47.06e-6;
+internalField   uniform 1;
 
 boundaryField
 {
@@ -31,13 +31,11 @@ boundaryField
     }
     outlet_up
     {
-        type            freestream;
-        freestreamValue $internalField;
+        type            zeroGradient;
     }
     outlet_down
     {
-        type            freestream;
-        freestreamValue $internalField;
+        type            zeroGradient;
     }
     airfoil
     {
@@ -46,8 +44,8 @@ boundaryField
     }
     inlet
     {
-        type            freestream;
-        freestreamValue $internalField;
+        type            fixedValue;
+        value           $internalField;
     }
     temp1
 	{	

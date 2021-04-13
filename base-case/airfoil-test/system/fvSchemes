@@ -29,8 +29,8 @@ divSchemes
 {
     default         none;
     div(phi,U)                      bounded Gauss linearUpwind grad(u);
-    div(phi,R)                      bounded Gauss linearUpwind grad(R);
-    div(phi,gamma)                  bounded Gauss upwind;
+    div(phi,R)                      bounded Gauss Minmod;
+    div(phi,gamma)                  bounded Gauss Minmod;
     div(phi,nuTilda)                bounded Gauss limitedLinear 1;
     div((nuEff*dev2(T(grad(U)))))   Gauss linear;
     div(nonlinearStress)            Gauss linear;
