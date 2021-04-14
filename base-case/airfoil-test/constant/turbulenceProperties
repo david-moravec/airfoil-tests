@@ -19,9 +19,10 @@ simulationType RAS;
 
 RAS
 {
-    RASModel        WrayAgarwalTransition;
-    //RASModel        SpalartAllmaras;
-    //RASModel        WrayAgarvalDebug;
+    //RASModel        GReWA;
+    RASModel        SpalartAllmaras;
+    //RASModel        WrayAgarwal2018;
+    //RASModel        WrayAgarwalTransition;
 
     
 

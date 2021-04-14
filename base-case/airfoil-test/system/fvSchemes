@@ -23,22 +23,32 @@ ddtSchemes
 gradSchemes
 {
     default         Gauss linear;
+
+    limited         cellLimited Gauss linear 0.5;
+
+    grad(U)         cellLimited Gauss linear 1;
+    grad(R)         $limited;
+    grad(gamma)     $limited;
+    grad(nuTilda)   $limited;
 }
 
 divSchemes
 {
     default         none;
+    turbulence                      bounded Gauss linearUpwind limited;
+
     div(phi,U)                      bounded Gauss linearUpwind grad(u);
-    div(phi,R)                      bounded Gauss Minmod;
-    div(phi,gamma)                  bounded Gauss Minmod;
-    div(phi,nuTilda)                bounded Gauss limitedLinear 1;
+    div(phi,R)                      $turbulence;
+    div(phi,gamma)                  $turbulence;
+    div(phi,Rnu)                    $turbulence;
+    div(phi,nuTilda)                $turbulence;
     div((nuEff*dev2(T(grad(U)))))   Gauss linear;
     div(nonlinearStress)            Gauss linear;
 }
 
 laplacianSchemes
 {
-    default         Gauss linear limited  0.333;
+    default         Gauss linear corrected;
 }
 
 interpolationSchemes

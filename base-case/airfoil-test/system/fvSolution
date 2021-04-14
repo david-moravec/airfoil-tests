@@ -19,39 +19,51 @@ solvers
 {
     p
     {
-        solver          GAMG;
-        tolerance       1e-20;
-        relTol          0.1;
-        smoother        GaussSeidel;
+        solver          PCG;
+        preconditioner  FDIC;
+        tolerance       1e-15;
+        relTol          0.001;
     }
 
-    "(U|k|epsilon|omega|f|v2|R|gamma|nuTilda)"
+    "(U|k|epsilon|omega|f|v2|R|Rnu|gamma|nuTilda)"
     {
-        solver          smoothSolver;
-        smoother        symGaussSeidel;
+        solver          PBiCGStab;
+        preconditioner  DILU;
         tolerance       1e-20;
-        relTol          0.1;
+        relTol          0.0;
+    }
+
+    Phi
+    {
+        $p;
     }
 }
 
 SIMPLE
 {
-    nNonOrthogonalCorrectors 2;
+    nNonOrthogonalCorrectors 1;
     consistent      yes;
 
     residualControl
     {
         p               1e-9;
         U               1e-9;
-        "(k|epsilon|omega|f|v2|R|gamma|nuTilda)" 1e-15;
+        "(k|epsilon|omega|f|v2|R|Rnu|gamma|nuTilda)" 1e-15;
     }
+}
+
+    
+
+potentialFlow
+{
+    nNonOrthogonalCorrectors 10;
 }
 
 relaxationFactors
 {
     fields
     {
-	p		0.3;
+	    p		0.9;
     }
     equations
     {
