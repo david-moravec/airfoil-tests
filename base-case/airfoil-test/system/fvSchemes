@@ -31,14 +31,14 @@ divSchemes
     div(phi,U)                      bounded Gauss linearUpwind grad(u);
     div(phi,R)                      bounded Gauss Minmod;
     div(phi,gamma)                  bounded Gauss Minmod;
-    div(phi,nuTilda)                bounded Gauss limitedLinear 1;
+    div(phi,nuTilda)                bounded Gauss Minmod;
     div((nuEff*dev2(T(grad(U)))))   Gauss linear;
     div(nonlinearStress)            Gauss linear;
 }
 
 laplacianSchemes
 {
-    default         Gauss linear limited  0.333;
+    default         Gauss linear corrected;
 }
 
 interpolationSchemes

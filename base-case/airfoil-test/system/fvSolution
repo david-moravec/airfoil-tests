@@ -21,7 +21,7 @@ solvers
     {
         solver          GAMG;
         tolerance       1e-20;
-        relTol          0.1;
+        relTol          0.001;
         smoother        GaussSeidel;
     }
 
@@ -31,6 +31,11 @@ solvers
         smoother        symGaussSeidel;
         tolerance       1e-20;
         relTol          0.1;
+    }
+
+    Phi
+    {
+        $p
     }
 }
 
@@ -45,6 +50,11 @@ SIMPLE
         U               1e-9;
         "(k|epsilon|omega|f|v2|R|gamma|nuTilda)" 1e-15;
     }
+}
+
+potentialFlow
+{
+    nNonOrthogonalCorrectors 10;
 }
 
 relaxationFactors

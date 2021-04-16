@@ -5,8 +5,9 @@ read -p "Name of turbulence model: " turbModel
 
 cd ./airfoil-test
 
-
+potentialFoam > log.potentialFoam
 simpleFoam > log.simpleFoam &
+SIMPLEfOAM_PID=$!
 sleep 5
 gnuplot residuals.gp &
 GNUPLOT_PID=$!
