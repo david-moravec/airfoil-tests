@@ -5,6 +5,8 @@ read -p "Name of turbulence model: " turbModel
 
 cd ./airfoil-test
 
+cp 0/U.org 0/U
+
 potentialFoam > log.potentialFoam
 simpleFoam > log.simpleFoam &
 SIMPLEfOAM_PID=$!

@@ -28,9 +28,13 @@ gradSchemes
 divSchemes
 {
     default         none;
-    div(phi,U)                      bounded Gauss linearUpwind grad(u);
-    div(phi,R)                      bounded Gauss Minmod;
-    div(phi,gamma)                  bounded Gauss Minmod;
+    div(phi,U)                      bounded Gauss Minmod Gauss linearUpwind grad(U);
+
+    div(phi,R)                      bounded Gauss Minmod Gauss linearUpwind grad(R);
+    div(phi,gamma)                  bounded Gauss Minmod Gauss linearUpwind grad(gamma);
+	//div(phi,R)      		bounded Gauss upwind; // use upwinding for the
+	//div(phi,gamma) 			bounded Gauss upwind; // turbulent quantities
+
     div(phi,nuTilda)                bounded Gauss Minmod;
     div((nuEff*dev2(T(grad(U)))))   Gauss linear;
     div(nonlinearStress)            Gauss linear;
@@ -38,7 +42,7 @@ divSchemes
 
 laplacianSchemes
 {
-    default         Gauss linear corrected;
+    default         Gauss linear limited corrected 0.33;
 }
 
 interpolationSchemes
@@ -48,7 +52,7 @@ interpolationSchemes
 
 snGradSchemes
 {
-    default         corrected;
+    default         limited corrected 0.33;
 }
 
 wallDist

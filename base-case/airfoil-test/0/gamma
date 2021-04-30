@@ -17,7 +17,7 @@ FoamFile
 
 dimensions      [0 0 0 0 0 0 0];
 
-internalField   uniform 1;
+internalField   uniform 1.0;
 
 boundaryField
 {
@@ -39,8 +39,7 @@ boundaryField
     }
     airfoil
     {
-        type            fixedValue;
-        value           uniform 0;
+        type            zeroGradient;
     }
     inlet
     {
