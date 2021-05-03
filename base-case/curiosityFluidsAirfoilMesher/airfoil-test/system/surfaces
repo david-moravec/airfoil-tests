@@ -1,0 +1,32 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     |
+    \\  /    A nd           | Web:      www.OpenFOAM.org
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+
+surfaces
+{
+    type            surfaces;
+    libs ("libsampling.so");
+    writeControl    writeTime;
+
+    surfaceFormat   raw;
+    fields          (wallShearStress p);
+
+    interpolationScheme cell;
+
+    surfaces
+    (
+        wall
+        {
+            type            patch;
+            patches         ("airfoil");
+            interpolate     false;
+            axis            x;
+        }
+    );
+}
+
+// ************************************************************************* //
