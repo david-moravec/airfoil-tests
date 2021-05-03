@@ -36,7 +36,7 @@ solvers
         solver          smoothSolver;
         smoother        GaussSeidel;
         nSweeps         2;
-        tolerance       1e-08;
+        tolerance       1e-16;
         relTol          0.1;
         minIter         1;
     }
@@ -46,7 +46,7 @@ solvers
         solver          smoothSolver;
         smoother        GaussSeidel;
         nSweeps         2;
-        tolerance       1e-08;
+        tolerance       1e-16;
         relTol          0.1;
     }
 }

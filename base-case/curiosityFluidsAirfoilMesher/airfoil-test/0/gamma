@@ -22,7 +22,7 @@ boundaryField
 {
     farfield
     {
-        type            freestreamPressure;
+        type            freestream;
         freestreamValue $internalField;
     }
     airfoil

@@ -22,7 +22,7 @@ airfoilfile='NACA0012.dat'
 DomainHeight=20  # Multiples Chord Length
 WakeLength=20 	 # Multiples Chord Length
 firstLayerHeight=0.0000221183
-growthRate=1.05				
+growthRate=1.2			
 MaxCellSize=0.5	# Multiples of chordlength
 
 

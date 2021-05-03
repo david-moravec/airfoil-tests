@@ -23,11 +23,11 @@ boundaryField
     farfield
     {
         type            freestream;
-        freestreamValue uniform 0.14;
+        freestreamValue $internalField;
     }
     airfoil
     {
-        type            fixedValue;
+        type            nutLowReWallFunction;
         value           uniform 0;
     }
 

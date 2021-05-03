@@ -13,7 +13,7 @@ surfaces
     writeControl    writeTime;
 
     surfaceFormat   raw;
-    fields          (wallShearStress p);
+    fields          (yPlus wallShearStress p);
 
     interpolationScheme cell;
 
@@ -24,7 +24,6 @@ surfaces
             type            patch;
             patches         ("airfoil");
             interpolate     false;
-            axis            x;
         }
     );
 }

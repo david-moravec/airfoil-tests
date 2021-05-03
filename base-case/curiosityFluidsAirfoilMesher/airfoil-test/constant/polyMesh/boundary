@@ -21,21 +21,21 @@ FoamFile
     {
         type            empty;
         inGroups        List<word> 1(empty);
-        nFaces          305450;
-        startFace       304702;
+        nFaces          157940;
+        startFace       157291;
     }
     farfield
     {
         type            patch;
-        nFaces          1155;
-        startFace       610152;
+        nFaces          957;
+        startFace       315231;
     }
     airfoil
     {
         type            wall;
         inGroups        List<word> 1(wall);
         nFaces          341;
-        startFace       611307;
+        startFace       316188;
     }
 )
 

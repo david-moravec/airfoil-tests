@@ -27,14 +27,12 @@ gradSchemes
 
 divSchemes
 {
-    default         none;
-    div(phi,U)      bounded Gauss Minmod;
+    default             none;
+    div(phi,U)          bounded Gauss linearUpwind grad(U);
+    div(phi,R)          bounded Gauss linearUpwind grad(R);
+    div(phi,gamma)      bounded Gauss linearUpwind grad(gamma);
 
-    div(phi,nuTilda) bounded Gauss linearUpwind grad(nuTilda);
-
-    div(phi,R) bounded Gauss Minmod;
-    div(phi,gamma) bounded Gauss Minmod;
-
+    div(phi,nuTilda)    bounded Gauss linearUpwind grad(nuTilda);
     div(phi,Phi)      bounded Gauss limitedLinear 1;
     div((nuEff*dev2(T(grad(U))))) Gauss linear;
 }

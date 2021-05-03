@@ -9,4 +9,4 @@ set grid
 set key right
 
 
-plot "../airfoil-test/Cf-x.dat" with linespoints pt 7 ps 0.1 lt rgb "red" title "skinFrictionCoefficient"
+plot "../airfoil-test/Cf-x.dat" with points pt 7 ps 1 lt rgb "red" title "skinFrictionCoefficient"
