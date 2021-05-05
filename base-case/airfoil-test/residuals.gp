@@ -9,6 +9,7 @@ plot "< cat log.simpleFoam | grep 'Solving for Ux' | cut -d' ' -f9 | tr -d ','" 
 "< cat log.simpleFoam | grep 'Solving for k' | cut -d' ' -f9 | tr -d ','" title 'k' with lines,\
 "< cat log.simpleFoam | grep 'Solving for p' | cut -d' ' -f9 | tr -d ','" title 'p' with lines,\
 "< cat log.simpleFoam | grep 'Solving for R' | cut -d' ' -f9 | tr -d ','" title 'R' with lines,\
+"< cat log.simpleFoam | grep 'Solving for gamma' | cut -d' ' -f9 | tr -d ','" title 'gamma' with lines,\
 "< cat log.simpleFoam | grep 'Solving for nuTilda' | cut -d' ' -f9 | tr -d ','" title 'nuTilda' with lines
 pause 1
 reread

@@ -10,3 +10,7 @@ for i in {2..9}; do
 		sed -i "s/defaultFaces/${patchNames[i-2]}/g" ${file}
 	fi
 done
+
+sed -i ':a;N;$!ba;s/patch/empty/1' ${file}
+sed -i ':a;N;$!ba;s/patch/empty/2' ${file}
+sed -i ':a;N;$!ba;s/patch/wall/7' ${file}

@@ -2,7 +2,7 @@
   =========                 |
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
    \\    /   O peration     | Website:  https://openfoam.org
-    \\  /    A nd           | Version:  7
+    \\  /    A nd           | Version:  dev
      \\/     M anipulation  |
 \*---------------------------------------------------------------------------*/
 FoamFile
@@ -17,7 +17,7 @@ FoamFile
 
 dimensions      [0 2 -1 0 0 0 0];
 
-internalField   uniform 1.547e-6;
+internalField   uniform 1.547e-06;
 
 boundaryField
 {
@@ -32,31 +32,37 @@ boundaryField
     outlet_up
     {
         type            freestream;
-        freestreamValue $internalField;
+        freestreamValue uniform 1.547e-06;
+        value           uniform 1.547e-06;
     }
     outlet_down
     {
         type            freestream;
-        freestreamValue $internalField;
+        freestreamValue uniform 1.547e-06;
+        value           uniform 1.547e-06;
     }
     airfoil
     {
         type            nutLowReWallFunction;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
         value           uniform 0;
     }
     inlet
     {
         type            freestream;
-        freestreamValue $internalField;
+        freestreamValue uniform 1.547e-06;
+        value           uniform 1.547e-06;
     }
     temp1
-	{	
-		type			zeroGradient;
-	}
+    {
+        type            zeroGradient;
+    }
     temp2
-	{	
-		type			zeroGradient;
-	}
+    {
+        type            zeroGradient;
+    }
 }
 
 
