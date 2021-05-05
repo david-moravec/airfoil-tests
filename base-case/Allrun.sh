@@ -1,5 +1,6 @@
 #!/bin/bash
 read -p "Name of turbulence model: " turbModel
+read -p "name of folder to save setup: " resultFold
 
 ./Allclean.sh 
 
@@ -7,7 +8,7 @@ cd ./airfoil-test
 
 cp 0/U.org 0/U
 
-potentialFoam > log.potentialFoam
+#potentialFoam > log.potentialFoam
 simpleFoam > log.simpleFoam &
 SIMPLEfOAM_PID=$!
 sleep 5
@@ -27,22 +28,21 @@ postProcess -func surfaces
 
 cd ../scripts
 
-gnuplot -e "turbModel='${turbModel}'" saveResiduals.gp 
 gnuplot -e "turbModel='${turbModel}'" Cf-x.gp 
 gnuplot -e "turbModel='${turbModel}'" Cp-x.gp 
 
-cd ../airfoil-test
+cd ../
 
-resultFold="../results/Cf-x/"
-if [ ! -d "${resultFold}" ] ; then 
-    mkdir -p "${resultFold}"
-    echo "creating folder"
-fi
+mkdir "${resultFold}"
 
-cp "./Cf-x.png" "${resultFold}/Cf-x.png"
-cp "./Cf-x.png" "${resultFold}/../../Cf-x.png"
-cp "./Cf-x.dat" "${resultFold}/data.dat"
-cp "./residuals.png" "${resultFold}/../residuals.png"
+cp "./airfoil-test/Cf-x.png" "${resultFold}/Cf-x.png"
+cp "./airfoil-test//Cf-x.dat" "${resultFold}/Cf-x.dat"
+cp "./airfoil-test/Cp-x.png" "${resultFold}/Cp-x.png"
+cp "./airfoil-test//Cp-x.dat" "${resultFold}/Cp-x.dat"
+cp -r ./airfoil-test/1 ${resultFold}
+cp -r ./airfoil-test/system ${resultFold}
+cp -r ./airfoil-test/constant ${resultFold}
+cp -r ./airfoil-test/0 ${resultFold}
 
 cd ../
 killall gnuplot
